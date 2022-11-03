@@ -1,0 +1,26 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<h2 style="text-align: center;">Giriş</h2>
+
+<div class="justify-center" style="background-color: chartreuse;">
+	<form method="POST">
+		{% csrf_token %}
+	  <div class="form-group">
+	  		    
+	    <input type="text" class="form-control"  placeholder="Kullanıcı Adresini Giriniz." name="username">
+	    
+	  </div>
+	  
+	  <div class="form-group">
+	    
+	    <input type="password" class="form-control"  placeholder="Şifrenizi Girin" name="password">
+	  </div>
+	  
+	  <button type="submit" class="btn btn-warning font-weight-bold">Giriş</button>
+	</form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<h3  style="text-align: center;">
+  
+  Web Based Programming and Design course Management Information Systems Department Osmaniye Korkut Ata University! </h1>
+</h3>
+  <div class="card text-center border border-success">
+  <div class="card-header">
+   Mücahit Turhan
+  </div>
+  <div class="card-body border border-dark" style="background-color:#FFA500;">
+    <h5 class="card-title font-weight-bold" ">Turhansofttech Software Solutions...</h5>
+    <p class="card-text">Open Source is King !!</p>
+    <a href="https://www.turhansofttech.com" class="btn btn-primary font-weight-bold">Tıkla</a>
+  </div>
+  <div class="card-footer text-muted border border-success font-italic" >
+       2022 Turhansofttech.com 
+  </div>
+</div>
+<br/>
+<br/>
+
+<div class="container-fluid">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5984425.361805177!2d32.139749535896044!3d39.110138653125325!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x39eb83f68e320b8c!2sOsmaniye%20Korkut%20Ata%20%C3%9Cniversitesi%20Fen-Edebiyat%20Fak%C3%BCltesi!5e0!3m2!1sen!2str!4v1667414789793!5m2!1sen!2str" width="1100" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<br/>
+<br/>
+
+{% if user.is_authenticated %}
+
+
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Bilgi</th>
+        <th scope="col">Adı Soyadı</th>
+        <th scope="col">Kullanıcı Adı</th>
+        <th scope="col">E-Posta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ user.first_name }} {{ last.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+</table>
+
+
+
+{% endif %}
+
+
+{% endblock %}
